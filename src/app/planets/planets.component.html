@@ -1,0 +1,14 @@
+<div *ngIf="!adventureStarted; else showList"> 
+  <p>
+    click on Button to start your space adventure.
+  </p>
+  <button routerLink='planet-list' (click)="adventureStarted = !adventureStarted">See planet list</button>
+</div>
+<ng-template #showList>
+    <router-outlet></router-outlet>  
+</ng-template>
+
+
+
+
+

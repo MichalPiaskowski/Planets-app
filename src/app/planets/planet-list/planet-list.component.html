@@ -1,0 +1,9 @@
+<p>
+    Choose a planet to view more details.
+</p>
+
+<app-planet-item *ngFor="let planetItem of planets; let i = index"
+[planet]="planetItem"
+[index]="i"
+>
+</app-planet-item>

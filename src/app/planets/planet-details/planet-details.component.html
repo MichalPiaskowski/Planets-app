@@ -1,0 +1,13 @@
+<button [routerLink]="['/planets/planet-list']">BACK</button>
+
+
+<div>
+  <h1>{{ planet.name }}</h1>
+  <p>Planet Details: </p>
+  <ul>
+    <li>Rotation period: {{ planet.rotation_period }}h</li>
+    <li>Period: {{ planet.orbital_period }} days</li>
+    <li>Diameter: {{ planet.diameter }}km</li>
+    <li>Climate: {{ planet.climate }}</li>
+  </ul>
+</div>
