@@ -1,6 +1,6 @@
 // import { EventEmitter } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Rx';
+import { Subject } from 'rxjs/Subject';
 
 import { Planet } from './planet.model';
 
@@ -29,6 +29,7 @@ export class PlanetService {
     console.log(this.planets);
     this.planetsChanged.next(this.planets.slice());
     console.log(this.planets);
+    return this.planets.slice();
   }
 
   getPlanets() {
