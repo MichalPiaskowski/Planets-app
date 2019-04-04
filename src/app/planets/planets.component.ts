@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Planet } from './planet.model';
+// import { Planet } from './planet.model';
 import { PlanetService } from './planet.service';
+import { ApiService } from './api.service';
+
 
 @Component({
   selector: 'app-planets',
@@ -10,18 +12,16 @@ import { PlanetService } from './planet.service';
   providers: [PlanetService]
 })
 export class PlanetsComponent implements OnInit {
-  selectedPlanet: Planet;
   adventureStarted = false;
 
-  constructor(private planetService: PlanetService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.planetService.planetSelected
-      .subscribe(
-        (planet: Planet) => {
-          this.selectedPlanet = planet;
-        }
-      );
+    this.apiService.apiGetPlanets();
+  }
+
+  startAdventure() {
+    this.adventureStarted = true;
   }
 
 }

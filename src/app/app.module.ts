@@ -9,6 +9,8 @@ import { PlanetDetailsComponent } from './planets/planet-details/planet-details.
 import { PlanetItemComponent } from './planets/planet-list/planet-item/planet-item.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PlanetService } from './planets/planet.service';
+import { ApiService } from './planets/api.service';
 
 
 
@@ -24,9 +26,9 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
   ],
-  providers: [],
+  providers: [PlanetService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

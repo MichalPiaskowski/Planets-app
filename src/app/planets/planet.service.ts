@@ -1,9 +1,13 @@
-import { EventEmitter } from '@angular/core';
+// import { EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Rx';
 
 import { Planet } from './planet.model';
 
+@Injectable()
 export class PlanetService {
-  planetSelected = new EventEmitter<Planet>();
+  planetsChanged = new Subject<Planet[]>();
+  // planetSelected = new EventEmitter<Planet>();
 
   private planets: Planet[] = [
     new Planet(
@@ -20,9 +24,15 @@ export class PlanetService {
       'temperate, tropical')
   ];
 
-  constructor() {}
+  setPlanets(planets: Planet[]) {
+    this.planets = planets;
+    console.log(this.planets);
+    this.planetsChanged.next(this.planets.slice());
+    console.log(this.planets);
+  }
 
   getPlanets() {
+    console.log(this.planets);
     return this.planets.slice();
   }
 
