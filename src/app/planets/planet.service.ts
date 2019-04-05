@@ -1,44 +1,33 @@
 // import { EventEmitter } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+// import { Subject } from 'rxjs/Subject';
 
 import { Planet } from './planet.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class PlanetService {
-  planetsChanged = new Subject<Planet[]>();
-  // planetSelected = new EventEmitter<Planet>();
+  // planetsChanged = new Subject<Planet[]>();
+  planetsChanged = new BehaviorSubject<Planet[]>([]);
 
-  private planets: Planet[] = [
-    new Planet(
-      'Alderaan',
-      24,
-      364,
-      12500,
-      'temperate'),
-    new Planet(
-      'Yavin IV',
-      24,
-      4818,
-      10200,
-      'temperate, tropical')
-  ];
+
+  planets: Planet[];
 
   setPlanets(planets: Planet[]) {
     this.planets = planets;
-    console.log(this.planets);
     this.planetsChanged.next(this.planets.slice());
-    console.log(this.planets);
-    return this.planets.slice();
+    // console.log(planets);
+    return planets;
   }
 
   getPlanets() {
-    console.log(this.planets);
+    // console.log(this.planets.slice());
     return this.planets.slice();
   }
 
-  getPlanet(id: number) {
-    return this.planets[id];
+  getPlanet(name: string) {
+    console.log('w metodzie getPlanet ' + name);
+    return this.planets.find(planet => planet.name === name);
   }
 
 }

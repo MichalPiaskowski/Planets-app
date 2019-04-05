@@ -9,8 +9,9 @@ import { Planet } from '../../planet.model';
 })
 export class PlanetItemComponent implements OnInit {
   @Input() planet: Planet;
-  @Input() index: number;
+  @Input() name: string;
 
   ngOnInit() {
+    console.log('w planet item name = ' + this.name);
   }
 }

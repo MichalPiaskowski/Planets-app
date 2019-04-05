@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 
@@ -10,8 +10,11 @@ import { PlanetService } from '../planet.service';
   templateUrl: './planet-list.component.html',
   styleUrls: ['./planet-list.component.css']
 })
-export class PlanetListComponent implements OnInit {
+export class PlanetListComponent implements OnInit, OnDestroy {
   planets: Planet[];
+  pagin = 5;
+  paginStart = 0;
+  paginEnd = this.pagin;
   subscription: Subscription;
 
   constructor(private planetService: PlanetService) { }
@@ -27,5 +30,34 @@ export class PlanetListComponent implements OnInit {
     console.log(this.planets);
   }
 
+  setPagin(pagin: number) {
+    this.pagin = pagin;
+    console.log('pagin ' + this.pagin);
+    this.paginEnd = pagin;
+    console.log(' pagin end ' + this.paginEnd);
+    this.paginStart = this.paginEnd - pagin;
+    console.log('pagin start ' + this.paginEnd);
+  }
+  nextPage() {
+    if (this.paginStart <= 60) {
+      this.paginStart = this.paginStart + this.pagin;
+      console.log('pagin start ' + this.paginStart);
+      this.paginEnd = this.paginEnd + this.pagin;
+      console.log('pagin end ' + this.paginEnd);
+    }
+  }
+
+  prevoiusPage() {
+    if (this.paginStart >= 5) {
+      this.paginStart = this.paginStart - this.pagin;
+      console.log('pagin start ' + this.paginStart);
+      this.paginEnd = this.paginEnd - this.pagin;
+      console.log('pagin end ' + this.paginEnd);
+    }
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 
 }

@@ -9,7 +9,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/planets', pathMatch: 'full' },
   { path: 'planets', component: PlanetsComponent, children: [
     { path: 'planet-list', component: PlanetListComponent },
-    { path: ':id', component: PlanetDetailsComponent },
+    { path: ':name', component: PlanetDetailsComponent },
   ]},
 ];
 

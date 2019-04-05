@@ -2,8 +2,20 @@
     Choose a planet to view more details.
 </p>
 
-<app-planet-item *ngFor="let planetItem of planets; let i = index"
+<app-planet-item *ngFor="let planetItem of planets | slice:paginStart:paginEnd; let i = index"
 [planet]="planetItem"
-[index]="i"
->
+[name]="planetItem.name">
 </app-planet-item>
+<div>
+    <span>Planets on page: </span> 
+    <button (click)="setPagin(5)">5</button> 
+    <button (click)="setPagin(10)">10</button> 
+    <button (click)="setPagin(25)">25</button> 
+    <button (click)="setPagin(100)">100</button>
+</div>
+<div>
+    <button (click)="prevoiusPage()">Previous</button>
+    <button (click)="nextPage()">Next</button>
+</div>
+
+

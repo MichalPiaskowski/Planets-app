@@ -11,18 +11,21 @@ import { PlanetService } from '../planet.service';
 })
 export class PlanetDetailsComponent implements OnInit {
   planet: Planet;
-  id: number;
+  name: string;
 
   constructor(private planetService: PlanetService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     // const id = this.route.snapshot.params['id'];
+    console.log('poza params ' + this.name);
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = +params['id'];
-          this.planet = this.planetService.getPlanet(this.id);
+          this.name = params['name'];
+          console.log('planet details name przed funckją ' + this.name);
+          this.planet = this.planetService.getPlanet(this.name);
+          console.log('planet details name po funkcji ' + this.name);
         }
       );
   }
