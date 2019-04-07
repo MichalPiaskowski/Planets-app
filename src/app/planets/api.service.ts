@@ -19,36 +19,39 @@ export class ApiService {
   //   return this.urls;
   // }
 
-  apiGetPlanets() {
-    let planets: Planet[] = [];
-    for (let i = 1; i < 8; i++) {
-    this.http.get(`https://swapi.co/api/planets/?page=${i}`)
-      .map(
-        (response: Response) => {
-        planets = planets.concat(response.json().results);
-        // console.log(planets);
-        return planets;
-      }).subscribe(
-        (planets: Planet[]) => {
-        this.planetService.setPlanets(planets);
-        }
-      );
-    }
-  }
-
-
   // apiGetPlanets() {
   //   let planets: Planet[] = [];
   //   for (let i = 1; i < 8; i++) {
   //   this.http.get(`https://swapi.co/api/planets/?page=${i}`)
-  //     .subscribe(
+  //     .map(
   //       (response: Response) => {
-  //           console.log(planets);
-  //           planets = planets.concat(response.json().results);
-  //           console.log(planets);
-  //           this.planetService.setPlanets(planets);
+  //       planets = planets.concat(response.json().results);
+  //       // console.log(planets);
+  //       return planets;
+  //     }).subscribe(
+  //       (planets: Planet[]) => {
+  //       this.planetService.setPlanets(planets);
   //       }
   //     );
   //   }
   // }
+
+
+  apiGetPlanets() {
+    let planets: Planet[] = [];
+    for (let i = 1; i < 8; i++) {
+    this.http.get(`https://swapi.co/api/planets/?page=${i}`)
+      .subscribe(
+        (response: Response) => {
+            console.log(planets);
+            planets = planets.concat(response.json().results);
+            console.log(planets);
+            this.planetService.setPlanets(planets);
+        },
+        (error: Response) => {
+          console.log('ups coś poszło nie tak' + error);
+        }
+      );
+    }
+  }
 }

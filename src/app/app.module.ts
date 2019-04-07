@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 import { PlanetsComponent } from './planets/planets.component';
 import { PlanetListComponent } from './planets/planet-list/planet-list.component';
 import { PlanetDetailsComponent } from './planets/planet-details/planet-details.component';
@@ -27,6 +30,8 @@ import { ApiService } from './planets/api.service';
     BrowserModule,
     AppRoutingModule,
     HttpModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [PlanetService, ApiService],
   bootstrap: [AppComponent]

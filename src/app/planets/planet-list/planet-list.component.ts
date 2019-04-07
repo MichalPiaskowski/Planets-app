@@ -12,6 +12,7 @@ import { PlanetService } from '../planet.service';
 })
 export class PlanetListComponent implements OnInit, OnDestroy {
   planets: Planet[];
+  term: string;
   pagin = 5;
   paginStart = 0;
   paginEnd = this.pagin;

@@ -2,7 +2,8 @@
     Choose a planet to view more details.
 </p>
 
-<app-planet-item *ngFor="let planetItem of planets | slice:paginStart:paginEnd; let i = index"
+<input type="text" [(ngModel)]="term">
+<app-planet-item *ngFor="let planetItem of planets | filter:term | slice:paginStart:paginEnd; let i = index"
 [planet]="planetItem"
 [name]="planetItem.name">
 </app-planet-item>
