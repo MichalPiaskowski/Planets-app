@@ -1,34 +1,50 @@
 .planets-container {
-    position: absolute;
+    position: relative;
     overflow: hidden;
     width: 100%;
+    min-height: 60vh;
     p {
-        font-size: 1.5rem;
+        margin-left: 3rem;
+        font-size: 2rem;
+        
+        .bigger {
+            font-size: 1.4em;
+        }
     }
 
     figure {
-        position: relative;
+        position: absolute;
+        width: 50%;
+        margin: 10rem 0 0 30%;
         top: 0;
         left: 0;
-        width: 70%;
-        margin-left: 20%;
         transform: translate(0) scale(1);
         cursor: pointer;
         overflow: hidden;
+        transition: linear 0.4s;
+
+        &:hover {
+            transform: translate(0) scale(1.1);
+        }
 
         img {
             width: 100%;
         }
+
         &.active {
-        animation: flyout 3s ease-in;
+        animation: flyout 4s ease-in forwards;
+        }
+
+        &:focus {
+            outline: 0;
         }
     }
 }
 
 @keyframes flyout {
-    0% { transform: translate(0) scale(1);}
+    0% { transform: translate(0) scale(1.1);}
 
-    60% { transform: translate(-500px, 50px) scale(0.3); }
+    50% { transform: translate(-100%, 50px) scale(0.4); }
 
-    100% { transform: translate(-400px, 50px) scale(0.5); left: 110%; }
+    100% { transform: translate(-100%, -200px) scale(0.3); left: 110%;}
 }

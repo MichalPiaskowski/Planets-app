@@ -12,6 +12,5 @@ export class PlanetItemComponent implements OnInit {
   @Input() name: string;
 
   ngOnInit() {
-    console.log('w planet item name = ' + this.name);
   }
 }

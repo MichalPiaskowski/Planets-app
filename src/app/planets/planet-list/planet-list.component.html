@@ -1,22 +1,25 @@
-<p>
-    Choose a planet to view more details.
-</p>
+<div class="planet-list-container">
+  <p class="cta">
+    Choose a planet to view more details
+  </p>
 
-<input type="text" [(ngModel)]="term">
-<app-planet-item *ngFor="let planetItem of planets | filter:term | slice:paginStart:paginEnd; let i = index"
-[planet]="planetItem"
-[name]="planetItem.name">
-</app-planet-item>
-<div>
-    <span>Planets on page: </span> 
-    <button (click)="setPagin(5)">5</button> 
-    <button (click)="setPagin(10)">10</button> 
-    <button (click)="setPagin(25)">25</button> 
-    <button (click)="setPagin(100)">100</button>
+  <input class="search-box" type="text" [(ngModel)]="term" placeholder="Search..">
+  <app-planet-item *ngFor="let planetItem of planets | filter:term | slice:paginStart:paginEnd; let i = index"
+    [planet]="planetItem" [name]="planetItem.name">
+  </app-planet-item>
+  <div class="pagination-container">
+			<div class="page-set">
+					<p>Pages:</p>
+					<button (click)="prevoiusPage()"><i class="fas fa-chevron-left"></i></button>
+					<button (click)="nextPage()"><i class="fas fa-chevron-right"></i></button>
+			</div>
+    <div class="pagin-set">
+        <p>Planets on page: </p>
+        <a [ngClass]="{'active': pagin === 5}" (click)="setPagin(5)">5</a>
+        <a [ngClass]="{'active': pagin === 10}" (click)="setPagin(10)">10</a>
+        <a [ngClass]="{'active': pagin === 25}" (click)="setPagin(25)">25</a>
+        <a [ngClass]="{'active': pagin === 100}" (click)="setPagin(100)">100</a>
+    </div>
+    
+	</div>
 </div>
-<div>
-    <button (click)="prevoiusPage()">Previous</button>
-    <button (click)="nextPage()">Next</button>
-</div>
-
-

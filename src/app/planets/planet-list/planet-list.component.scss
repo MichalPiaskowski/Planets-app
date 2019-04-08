@@ -1,0 +1,106 @@
+@import "../../../styles/params";
+
+.planet-list-container {
+    position: relative;
+    padding: 3rem;
+
+    .cta {
+        font-size: 2rem;
+    }
+    .search-box {
+        position: absolute;
+        width: 25rem;
+        top: 0;
+        right: 3rem;
+        padding-left: 12px;
+        color: #000;
+        font-size: 1.5rem;
+        line-height: 180%;
+        font-family: $main-font;
+        border: solid 1px $main-font-color;
+        border-radius: 20px;
+        background-color: $main-font-color;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 95% center;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            font-size: 1.5rem;
+            line-height: 180%;
+            font-family: $main-font;
+            color: #000;
+        }
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        font-size: 0;
+
+        .page-set {
+
+            p {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            button {
+                text-align: center;
+                width: 4rem;
+                height: 4rem;
+                font-size: 2.9rem;
+                line-height: 4rem;
+                font-family: $common-text-font;
+                color: #000;
+                background-color: $main-font-color;
+                border: none;
+                cursor: pointer;
+                transition: linear 0.1s;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                        font-size: 3rem;
+                }
+            }
+        }
+
+        .pagin-set {
+
+            p {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            a { 
+                padding: 0 1rem;
+                font-size: 2rem;
+                transition: linear 0.2s;
+                text-decoration: none;
+                border-right: $main-font-color 2px solid;
+                opacity: 0.7;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &.active {
+                    opacity: 1;
+                }
+
+                
+            }
+            
+        }
+    }
+    
+}

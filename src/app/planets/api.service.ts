@@ -45,10 +45,10 @@ export class ApiService {
     this.http.get(`https://swapi.co/api/planets/?page=${i}`)
       .subscribe(
         (response: Response) => {
-            console.log(planets);
+            setTimeout(() => {
             planets = planets.concat(response.json().results);
-            console.log(planets);
             this.planetService.setPlanets(planets);
+            }, 500);
         },
         (error: Response) => {
           console.log('ups coś poszło nie tak' + error);

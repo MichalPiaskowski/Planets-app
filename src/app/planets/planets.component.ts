@@ -14,6 +14,7 @@ import { ApiService } from './api.service';
 export class PlanetsComponent implements OnInit {
   adventureStarted = false;
   startAnimation = false;
+  showMockData = false;
 
   constructor(private apiService: ApiService, private planetService: PlanetService) {}
 
@@ -23,9 +24,12 @@ export class PlanetsComponent implements OnInit {
 
   startAdventure() {
     this.startAnimation = true;
-    if (this.planetService.planets.length > 1) {
-      setTimeout(() => { this.adventureStarted = true; }, 3000);
+    if (this.planetService.planets.length >= 0) {
+      setTimeout(() => { this.adventureStarted = true; }, 4000);
+    } else {
+      setTimeout(() => { this.showMockData = true; }, 5000);
+      }
     }
   }
 
-}
+
