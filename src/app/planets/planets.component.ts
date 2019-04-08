@@ -8,11 +8,12 @@ import { ApiService } from './api.service';
 @Component({
   selector: 'app-planets',
   templateUrl: './planets.component.html',
-  styleUrls: ['./planets.component.css'],
+  styleUrls: ['./planets.component.scss'],
   // providers: [PlanetService]
 })
 export class PlanetsComponent implements OnInit {
   adventureStarted = false;
+  startAnimation = false;
 
   constructor(private apiService: ApiService, private planetService: PlanetService) {}
 
@@ -21,9 +22,9 @@ export class PlanetsComponent implements OnInit {
   }
 
   startAdventure() {
-    if (this.planetService.planets.length > 60) {
-    this.adventureStarted = true;
-    console.log(this.planetService.planets);
+    this.startAnimation = true;
+    if (this.planetService.planets.length > 1) {
+      setTimeout(() => { this.adventureStarted = true; }, 3000);
     }
   }
 

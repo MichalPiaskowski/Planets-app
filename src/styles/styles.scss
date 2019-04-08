@@ -1,0 +1,17 @@
+
+//IMPORTS
+@import "./params";
+
+
+//GLOBAL STYLES
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color: $main-font-color;
+    font-family: "Starjedi";
+    font-size: $base-font-size;
+}

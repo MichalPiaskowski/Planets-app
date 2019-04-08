@@ -1,0 +1,22 @@
+header{
+    margin: 3rem 0;
+    font-size: 4rem;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+    h1 {
+        max-width: 300px;
+        padding-bottom: 1rem;
+        line-height: 105%;
+        margin: 0 5% 0 15%;
+        border: 5px solid;
+        border-radius: 20px;
+    }
+    
+    h2 {
+        height: 100%;
+        font-size: 1.3em;
+    }
+}

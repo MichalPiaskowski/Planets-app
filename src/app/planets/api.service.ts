@@ -37,6 +37,8 @@ export class ApiService {
   // }
 
 
+// DOKOŃCZ DODAWANIE DUMMY DATA DO POBIERABIA Z API!!!!
+
   apiGetPlanets() {
     let planets: Planet[] = [];
     for (let i = 1; i < 8; i++) {
@@ -50,8 +52,17 @@ export class ApiService {
         },
         (error: Response) => {
           console.log('ups coś poszło nie tak' + error);
+          this.http.get(`./assets/mock/mock_planet.json`).
+          map((response: Response) => {
+                  planets = planets.concat(response.json().results);
+                  // console.log(planets);
+                  return planets;
+                }).subscribe(
+                  (planets: Planet[]) => {
+                  this.planetService.setPlanets(planets);
+                  }
+          );
         }
-      );
-    }
+      )}
   }
 }
