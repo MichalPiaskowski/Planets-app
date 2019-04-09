@@ -20,8 +20,22 @@ export class PlanetService {
     return planets;
   }
 
+  // sortPlanets() {
+  //   return array.sort((i, j): number => {
+  //     let x = i[key];
+  //     let y = j[key];
+
+  //   })
+  // }
+
   getPlanets() {
-    // console.log(this.planets.slice());
+    this.planets.sort((leftSide, rightSide): number => {
+      if (leftSide.name < rightSide.name) { return -1; }
+      if (leftSide.name > rightSide.name) { return 1; }
+      return 0;
+    });
+    console.log(this.planets);
+    this.planets.slice();
     return this.planets.slice();
   }
 
