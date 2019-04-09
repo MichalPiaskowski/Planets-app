@@ -16,7 +16,7 @@
     figure {
         position: absolute;
         width: 50%;
-        margin: 10rem 0 0 30%;
+        margin: 11rem 0 0 30%;
         top: 0;
         left: 0;
         transform: translate(0) scale(1);
@@ -45,7 +45,7 @@
 @keyframes flyout {
     0% { transform: translate(0) scale(1.1);}
 
-    50% { transform: translate(-100%, 50px) scale(0.4); }
+    70% { transform: translate(0, 50px) scale(0.4); left: -20%; }
 
-    100% { transform: translate(-100%, -200px) scale(0.3); left: 110%;}
+    100% { transform: translate(0, -100px) scale(0.3); left: 110%;}
 }

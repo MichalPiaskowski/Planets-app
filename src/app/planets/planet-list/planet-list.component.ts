@@ -40,7 +40,17 @@ export class PlanetListComponent implements OnInit, OnDestroy {
     console.log('pagin start ' + this.paginEnd);
   }
   nextPage() {
-    if (this.paginStart <= 60) {
+    if (this.paginStart < 60 && this.pagin === 5) {
+      this.paginStart = this.paginStart + this.pagin;
+      console.log('pagin start ' + this.paginStart);
+      this.paginEnd = this.paginEnd + this.pagin;
+      console.log('pagin end ' + this.paginEnd);
+    } else if (this.paginStart < 60 && this.pagin === 10) {
+      this.paginStart = this.paginStart + this.pagin;
+      console.log('pagin start ' + this.paginStart);
+      this.paginEnd = this.paginEnd + this.pagin;
+      console.log('pagin end ' + this.paginEnd);
+    } else if (this.paginStart < 50 && this.pagin === 25) {
       this.paginStart = this.paginStart + this.pagin;
       console.log('pagin start ' + this.paginStart);
       this.paginEnd = this.paginEnd + this.pagin;

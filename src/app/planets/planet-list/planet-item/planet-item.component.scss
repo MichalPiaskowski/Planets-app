@@ -1,12 +1,13 @@
 @import '../../../../styles/params';
 
 .planet-item-container {
+    width: 70%;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: solid 2px;
-    width: 70%;
     color: $secondary-font-color;
-    
+    border-bottom: solid 2px;
+    box-shadow: 4px 5px 4px 0px;
+
     a {
         text-decoration: none;
         cursor: pointer;

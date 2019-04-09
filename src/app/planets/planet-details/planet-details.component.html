@@ -2,14 +2,13 @@
 <div class="planet-details-container">
   <h2>{{ planet.name }}</h2>
   <ul>
-    <li>Rotation Period: {{ planet.rotation_period }}h</li>
-    <li>Orbital Period: {{ planet.orbital_period }} days</li>
-    <li>Diameter: {{ planet.diameter }}km</li>
-    <li>Climate: {{ planet.climate }}</li>
-    <li>Gravity: {{ planet.gravity }}</li>
-    <li>Terrain: {{ planet.terrain }}</li>
-    <li>Surface Water: {{ planet.surface_water }}</li>
-    <li>Population: {{ planet.population }}</li>
+    <li><i class="fas fa-sync-alt"></i>Rotation Period: <span class="planet-data">{{ planet.rotation_period }}h</span></li>
+    <li><i class="fas fa-satellite"></i>orbital Period: <span class="planet-data">{{ planet.orbital_period }} days</span></li>
+    <li><i class="fas fa-ruler"></i>Diameter: <span class="planet-data">{{ planet.diameter }}km</span></li>
+    <li><i class="fas fa-thermometer-half"></i>Climate: <span class="planet-data">{{ planet.climate }}</span></li>
+    <li><i class="fas fa-weight-hanging"></i>Gravity: <span class="planet-data">{{ planet.gravity }}</span></li>
+    <li><i class="fas fa-leaf"></i>Terrain: <span class="planet-data">{{ planet.terrain }}</span></li>
+    <li><i class="fas fa-tint"></i>Surface Water: <span class="planet-data">{{ planet.surface_water }}</span></li>
+    <li><i class="fas fa-male"></i>Population: <span class="planet-data">{{ planet.population }}</span></li>
   </ul>
 </div>
-  

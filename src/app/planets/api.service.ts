@@ -55,7 +55,7 @@ export class ApiService {
   apiGetPlanets() {
     let planets: Planet[] = [];
     for (let i = 1; i < 8; i++) {
-    this.http.get(`https://swapi.co/api/planet/?page=${i}`)
+    this.http.get(`https://swapi.co/api/planets/?page=${i}`)
       .subscribe(
         (response: Response) => {
             setTimeout(() => {
@@ -64,7 +64,7 @@ export class ApiService {
             }, 500);
         },
         (error: Response) => {
-          // console.log('ups coś poszło nie tak' + error);
+          console.log('ups coś poszło nie tak' + error);
         }
       );
     }
