@@ -1,0 +1,35 @@
+@import '../../../../styles/params';
+
+.planet-item-container {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: solid 2px;
+    width: 70%;
+    color: $secondary-font-color;
+    
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        color: $secondary-font-color;
+
+        &:hover i {
+            transform: rotateY(360deg);
+            transition: 0.5s linear;
+        }
+
+        i {
+            display: inline-block;
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+            
+        }
+
+        h3 {
+            display: inline-block;
+            font-size: 1.8rem;
+        }
+    }
+
+
+    
+}

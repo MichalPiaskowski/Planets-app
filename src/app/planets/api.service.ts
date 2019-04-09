@@ -38,11 +38,24 @@ export class ApiService {
 
 
 // DOKOŃCZ DODAWANIE DUMMY DATA DO POBIERABIA Z API!!!!
+  apiGetMockData() {
+    let planets: Planet[] = [];
+    this.http.get('../../assets/mock/mock_planets_1.json')
+      .subscribe(
+        (response: Response) => {
+          console.log(response.json().results);
+          planets = planets.concat(response.json().results);
+          console.log(planets);
+          this.planetService.setPlanets(planets);
+        }
+      );
+  }
+
 
   apiGetPlanets() {
     let planets: Planet[] = [];
     for (let i = 1; i < 8; i++) {
-    this.http.get(`https://swapi.co/api/planets/?page=${i}`)
+    this.http.get(`https://swapi.co/api/planet/?page=${i}`)
       .subscribe(
         (response: Response) => {
             setTimeout(() => {
@@ -51,18 +64,9 @@ export class ApiService {
             }, 500);
         },
         (error: Response) => {
-          console.log('ups coś poszło nie tak' + error);
-          this.http.get(`./assets/mock/mock_planet.json`).
-          map((response: Response) => {
-                  planets = planets.concat(response.json().results);
-                  // console.log(planets);
-                  return planets;
-                }).subscribe(
-                  (planets: Planet[]) => {
-                  this.planetService.setPlanets(planets);
-                  }
-          );
+          // console.log('ups coś poszło nie tak' + error);
         }
-      )}
+      );
+    }
   }
 }

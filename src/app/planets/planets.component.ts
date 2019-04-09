@@ -24,10 +24,13 @@ export class PlanetsComponent implements OnInit {
 
   startAdventure() {
     this.startAnimation = true;
-    if (this.planetService.planets.length >= 0) {
+    if (this.planetService.planets !== undefined) {
       setTimeout(() => { this.adventureStarted = true; }, 4000);
     } else {
-      setTimeout(() => { this.showMockData = true; }, 5000);
+        setTimeout(() => {
+          this.adventureStarted = true;
+          this.apiService.apiGetMockData();
+        }, 5000);
       }
     }
   }

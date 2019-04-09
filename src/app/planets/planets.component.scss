@@ -3,6 +3,7 @@
     overflow: hidden;
     width: 100%;
     min-height: 60vh;
+
     p {
         margin-left: 3rem;
         font-size: 2rem;
@@ -28,7 +29,7 @@
         }
 
         img {
-            width: 100%;
+            width: 80%;
         }
 
         &.active {

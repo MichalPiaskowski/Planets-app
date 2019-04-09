@@ -1,0 +1,51 @@
+@import '../../../styles/params';
+
+.btn-back {
+  height: 4rem;
+  width: 4rem;
+  overflow: hidden;
+  margin-left: 3rem;
+  padding: 0 1rem;
+  font-size: 2rem;
+  line-height: 4rem;
+  font-weight: 700;
+  font-family: $common-text-font;
+  color: #000;
+  text-align: left;
+  background-color: $main-font-color;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: linear 0.5s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    width: 9rem;
+  }
+}
+
+.planet-details-container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+    color: $secondary-font-color;
+    border: 2px solid;
+    box-shadow: 1px 1px 10px 10px;
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    ul {
+        list-style: none;
+        font-size: 1.5rem;
+
+        li {
+
+        }
+    }
+
+}

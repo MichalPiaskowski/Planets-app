@@ -1,13 +1,15 @@
-<button [routerLink]="['/planets/planet-list']">BACK</button>
-
-
-<div>
-  <h1>{{ planet.name }}</h1>
-  <p>Planet Details: </p>
+<button class="btn-back" [routerLink]="['/planets/planet-list']"><i class="fas fa-arrow-left"></i> Back</button>
+<div class="planet-details-container">
+  <h2>{{ planet.name }}</h2>
   <ul>
-    <li>Rotation period: {{ planet.rotation_period }}h</li>
-    <li>Period: {{ planet.orbital_period }} days</li>
+    <li>Rotation Period: {{ planet.rotation_period }}h</li>
+    <li>Orbital Period: {{ planet.orbital_period }} days</li>
     <li>Diameter: {{ planet.diameter }}km</li>
     <li>Climate: {{ planet.climate }}</li>
+    <li>Gravity: {{ planet.gravity }}</li>
+    <li>Terrain: {{ planet.terrain }}</li>
+    <li>Surface Water: {{ planet.surface_water }}</li>
+    <li>Population: {{ planet.population }}</li>
   </ul>
 </div>
+  

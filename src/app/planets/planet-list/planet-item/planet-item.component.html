@@ -1,5 +1,6 @@
-<a
-[routerLink]="['/planets', name]">
-  <h3>{{ planet.name }}</h3>
-  <hr>
-</a>
+<div class="planet-item-container">
+  <a [routerLink]="['/planets', name]">
+    <i class="fas fa-globe"></i>
+    <h3>{{ planet.name }}</h3>
+  </a>
+</div>
