@@ -1,4 +1,3 @@
-
 export class Planet {
   public name: string;
   public rotation_period: number;

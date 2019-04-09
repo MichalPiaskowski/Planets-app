@@ -8,6 +8,9 @@
         font-size: 2rem;
         margin-bottom: 2rem;
     }
+
+//SEARCH BOX
+//-----------------------------------------    
     .search-box {
         position: absolute;
         width: 25rem;
@@ -37,7 +40,11 @@
             color: #000;
         }
     }
+//-----------------------------------------
 
+
+//PAGINATION
+//-----------------------------------------
     .pagination-container {
         display: flex;
         justify-content: space-between;

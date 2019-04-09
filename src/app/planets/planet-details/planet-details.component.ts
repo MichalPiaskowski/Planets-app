@@ -17,15 +17,11 @@ export class PlanetDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // const id = this.route.snapshot.params['id'];
-    console.log('poza params ' + this.name);
     this.route.params
       .subscribe(
         (params: Params) => {
           this.name = params['name'];
-          console.log('planet details name przed funckją ' + this.name);
           this.planet = this.planetService.getPlanet(this.name);
-          console.log('planet details name po funkcji ' + this.name);
         }
       );
   }

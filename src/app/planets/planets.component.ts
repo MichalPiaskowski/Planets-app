@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { Planet } from './planet.model';
 import { PlanetService } from './planet.service';
 import { ApiService } from './api.service';
 
@@ -9,7 +8,6 @@ import { ApiService } from './api.service';
   selector: 'app-planets',
   templateUrl: './planets.component.html',
   styleUrls: ['./planets.component.scss'],
-  // providers: [PlanetService]
 })
 export class PlanetsComponent implements OnInit {
   adventureStarted = false;
@@ -29,10 +27,10 @@ export class PlanetsComponent implements OnInit {
       setTimeout(() => { this.adventureStarted = true; }, 4000);
     } else {
       console.log('pobrane lokalnie');
+      this.apiService.apiGetMockData();
         setTimeout(() => {
           this.adventureStarted = true;
-          this.apiService.apiGetMockData();
-        }, 5000);
+        }, 4000);
       }
     }
   }
