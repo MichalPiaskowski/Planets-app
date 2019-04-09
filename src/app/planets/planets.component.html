@@ -1,6 +1,6 @@
 <div class="planets-container" *ngIf="!adventureStarted && !showMockData; else showList"> 
   <p>
-    <span class="bigger">click </span>on Starship to start your space adventure.
+    <span class="bigger">click </span>on Starship to start your space adventure
   </p>
   <figure routerLink='planet-list' [ngClass]="{'active': startAnimation}" (click)="startAdventure()"><img src="../../assets/images/starship.png" alt="Star Ship"></figure>
 </div>

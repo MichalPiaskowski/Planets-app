@@ -44,6 +44,7 @@
 
   h2 {
     font-size: 3rem;
+    text-transform: lowercase;
   }
 
   ul {
@@ -52,6 +53,7 @@
     li {
       color: $main-font-color;
       font-size: 1.8rem;
+      text-transform: lowercase;
 
       i {
         width: 30px;
